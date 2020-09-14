@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="跳转" id="btn"/>
+			<input type="button" value="前进" id="forward"/>
+				<input type="button" value="刷新" id="reflash"/>
+		<script type="text/javascript">
+			var btnNode = document.getElementById("btn");
+			var forwardNode = document.getElementById("forward");
+			var reflashNode = document.getElementById("reflash");
+			btnNode.onclick = function() {
+				location.href = "02.a.html"
+			}
+			
+			forwardNode.onclick = function() {
+				// 前进到上一个页面
+				//history.forward();
+					history.go(1);
+			}
+			
+			/**
+			 * 刷新
+			 */
+			reflashNode.onclick = function() {
+				//location.reload();
+				history.go(0);
+			}
+		</script>
+	</body>
+</html>

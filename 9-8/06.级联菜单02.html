@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<select id="pro">
+			<option value="">-------请选择------</option>
+			<option value="js">江苏省</option>
+			<option value="zj">浙江省</option>
+			<option value="ah">安徽省</option>
+		</select>
+		
+		<select id="city">
+			<option value="">-------请选择------</option>
+			
+		</select>
+		
+		<script type="text/javascript">
+			/**
+			 * select
+			 *     options   获取下拉列表中所有options 的集合
+			 * 
+			 */
+			
+				// 1 为省份的下拉选项注册事件 
+			var proNode = document.getElementById("pro");
+			
+			var dataSet = [,['南京市','苏州市','无锡市','镇江市'],['杭州市','绍兴市','宁波市','温州市'],['合肥市','芜湖市','黄山市']]
+			
+			proNode.onchange = function() {
+						var cityNode = document.getElementById("city");
+				// 获取的索引值是从  0 开始的
+				var index = this.selectedIndex;
+				var datas = dataSet[index];  // 城市的数组
+				cityNode.options.length = 1;
+				for(var i in datas) {
+					var data =  datas[i];
+					// 每一个城市就是一个option
+					var optionNode = document.createElement("option");
+						optionNode.innerText = data;
+						cityNode.appendChild(optionNode)
+				}
+			}
+		</script>
+	</body>
+</html>

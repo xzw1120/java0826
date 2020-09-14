@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 100px;
+				border: solid;
+			}
+		</style>
+				<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<input type="button" value="点我变色" />
+		<input type="button" value="点我变色" />
+		<input type="button" value="点我变色" />
+		<input type="button" value="点我变色" />
+		
+		<div>
+			
+		</div>
+		<div>
+			
+		</div>
+		<div>
+			
+		</div>
+		
+		<script type="text/javascript">
+			var $inputNode = $('input');
+			// jquery 的事件 就是在js事件的基础上 去掉on
+			$inputNode.click(function(){
+				//console.dir(this)
+				// this.style.backgroundColor = 'red'
+				$(this).css('background-color','green')
+			})
+			
+			var $div = $('div');
+			
+//			$div.mouseover(function(){
+//				$(this).css('background-color','red')
+//			})
+//			
+//			$div.mouseout(function(){
+//				$(this).css('background-color','green')
+//			})
+
+			$div.mouseover(function(){
+				$(this).css('background-color','red')
+			}).mouseout(function(){
+				$(this).css('background-color','green')
+			}).mousedown(function(){
+				$(this).css('background-color','yellow')
+			}).mouseup(function(){
+				$(this).css('background-color','orange')
+			})
+
+
+		
+		</script>
+	</body>
+</html>

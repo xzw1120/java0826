@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<div flag="a">上元教育</div>
+		<div flag="a-b-c">上元教育</div>
+		<div flag="e-b-f">上元教育</div>
+		<div flag="a-f-c">上元教育</div>
+		
+		<script type="text/javascript">
+			/**
+			 * 属性选择器 
+			 */
+			$('div[flag]').css('color','red')
+			$('div[flag=a]').css('color','blue')
+			$('div[flag*=b]').css('color','orange')
+			
+			$('div[flag^=a]').css('color','plum')
+			$('div[flag$=f]').css('color','green')
+		</script>
+	</body>
+</html>

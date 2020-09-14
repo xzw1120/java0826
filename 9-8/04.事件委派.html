@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a {
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			
+			div {
+				width: 100px;
+				height: 100px;
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button"  id="btn01" value="点击"/>
+		<input type="button"  id="btn02" value="点击2"/>
+		<div id="div01"></div>
+		<div id="div02"></div>
+		<script type="text/javascript">
+			/**
+			 * 
+			 * 只需要记住一个 
+			 *   js中 只有点击事件才可以进行委派   其他的事件时没有办法委派的
+			 * 
+			 * 
+			 */
+			var btnNode = document.getElementById("btn01");
+			var btnNode2 = document.getElementById("btn02");
+			btnNode.onclick = function() {
+				var divNode = document.createElement("div");
+				divNode.className = 'a';
+				document.body.appendChild(divNode)
+				
+			}
+			
+			btnNode2.onclick = function() {
+				// 将btn点击按钮的事件委派到一样   点击2 这个按钮上 即为 点击 点击按钮 点击2按钮 两者的效果是一样的
+				btnNode.click();
+			}
+			
+			var div01Node = document.getElementById("div01");
+				var div02Node = document.getElementById("div02");
+			div01Node.onmouseover = function() {
+				this.style.backgroundColor = 'red'
+			}
+			
+			div02Node.onmouseover = function() {
+				div01Node.mouseover();
+			}
+		</script>
+	</body>
+</html>

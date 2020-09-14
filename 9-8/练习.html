@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 500px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 500px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #b0b0b0;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+<script src="../js/jquery-1.8.3.min.js" type="text/javascript" ></script>
+</head>
+<body>
+  <div class="wrap">
+      <table>
+          <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="j_cbAll" />
+                </th>
+                <th>商品</th>
+                <th>价钱</th>
+            </tr>
+          </thead>
+          <tbody id="j_tb">
+          	
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>联想电脑</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>华为手机</td>
+                <td>4000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>小米手机</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>诺基亚</td>
+                <td>1000</td>
+            </tr>
+
+          </tbody>
+      </table>
+      <input type="button" value="  反 选  " id="btn">
+  </div>
+  <script type="text/javascript">
+  	$(function(){
+  		var $checkall = $("#j_cbAll")
+  	var $checkSingleNodes = $("#j_tb input");
+  	var $reversBtnNode = $("#btn");
+  	
+  		$checkall.click(function(){
+  		 	var checks = $(this).prop("checked");
+  		 	$checkSingleNodes.prop("checked",checks)
+  			
+  		})
+  		
+  		$checkSingleNodes.click(function(){
+    		
+    		isAllChecked();
+    	})
+  		$reversBtnNode.click(function(){
+  			//1获取以前选中的
+  			var $checkSingleNodes= $("#j_tb input:checked");
+  			var $nocheckSingleNodes= $("#j_tb input:not(:checked)");
+			$checkSingleNodes.prop("checked",false);
+			$nocheckSingleNodes.prop("checked",true);
+			isAllChecked();
+  		})
+  		
+  		 function isAllChecked() {
+        	// 1 获取全部选中的节点 
+        		var $checkedNodes = $("#j_tb input:checked");
+        	// 2 获取所有的节点 
+        	var $checkedNodes2 = $("#j_tb input");
+        	var flag = $checkedNodes.length === $checkedNodes2.length ? true : false;
+        	
+        	$checkall.prop('checked',flag)
+        }
+  	})
+  </script>
+	</body>
+</html>

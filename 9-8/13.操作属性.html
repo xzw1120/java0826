@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		   <a href="#" flag='1'>百度</a>
+			<a href="#" flag='2'>百度</a>
+			
+			<script type="text/javascript">
+				
+				
+				/**
+				 *  jquery 对属性操作 
+				 *     设置/删除的时候   有隐式迭代的效果 
+				 *     获取属性值的时候  只能获取第一个   不进行隐式迭代 
+				 * 
+				 *  attr(key,value) 设置属性     可以设置默认 设置自定义的 
+				 *  removeAttr(key)   删除属性 
+				 *  
+				 * 	attr(key)  获取属性的值 
+				 * 
+				 * 
+				 *  prop(key,value) 设置属性     只能设置默认属性 但是设置自定义属性没法比设置上 可以能读取出来 
+				 *   removeProp(key) 删除属性 将属性的值置为undefined 
+				 *  prop(key)  获取属性 
+				 * 
+				 *  平时开发  这两种都可以   如果出现了奇怪的问题 就使用prop 
+				 * 
+				 *  官方解释: 
+				 *    attr  只能设置一次 
+				 *    prop  可以复用多次
+				 * 
+				 * 
+				 */
+				
+				
+				
+				var $aNode = $("a");
+				
+				// 为a添加属性
+				
+				// 添加默认属性
+				$aNode.attr('href','http://www.baidu.com')
+				$aNode.removeAttr('href')
+				
+				// 添加自定义属性 
+				$aNode.attr('person','http://www.baidu.com')
+				$aNode.removeAttr('person')
+				
+				// 获取属性   获取属性 只获取第一个  并非是隐式迭代的
+				var a = $aNode.attr("flag");
+				console.info(a)
+				
+				
+				
+				
+				// prop
+				
+				// 设置属性
+				$aNode.prop('href','http://www.sina.com')
+				// 删除属性  将属性置为  undefined  
+				$aNode.removeProp('href')
+				
+				// 设置自定义属性
+				$aNode.prop('person','http://person')
+				console.info($aNode.prop('person'))
+			</script>
+	</body>
+</html>

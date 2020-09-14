@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--使用jquert  1映入jquery文件 -->
+		<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+		<!--使用jquery-->
+		<script type="text/javascript">
+			// 2 写jquery的入口 函数 
+			// 将文档装为jquery
+			/**
+			 * jquery的入口函数类似于  js中的 window.onload   都表示页面加载完毕后执行
+			 * 可以在jquery中写js代码   其实  jqeruy就是一个特殊的js
+			 * 
+			 * 如果js 写这段代码  经过哪些步骤 
+			 *    var  divNodes = document.getElementsByTagName("div");
+				
+				for(var index in divNodes) {
+					var divNode = divNodes[index];
+					divNode.style.width = '200px';
+					
+					divNode.style.height = '200px';
+						divNode.style.backgroundColor = 'yellow';
+						
+						//divNode.style。width = 200px。height = 200px
+				}
+				
+				1. 选择  选择多个节点 
+				2. 遍历这个节点 
+				3. 为每一个节点添加样式 
+			 * 
+			 */
+			$(document).ready(function() {
+				// 3 书写jquery代码  以及js代码
+				// 4 需求 将div 样式发生改变 
+				// 4.1 获取div 节点 
+				
+				// js 书写的代码
+//				var  divNodes = document.getElementsByTagName("div");
+//				
+//				for(var index in divNodes) {
+//					var divNode = divNodes[index];
+//					divNode.style.width = '200px';
+//					divNode.style.height = '200px';
+//					divNode.style.backgroundColor = 'yellow';
+//				}
+				
+				// jquert写 
+				// 1 获取节点   节点不再是dom节点了 而是 jquery对象 
+				// 将所有的div都选中了
+				var $divNode = $('div');
+				// 2 调用jquery对象 设置样式的函数 
+//				$divNode.css('width','200px');
+//				$divNode.css('height','200px');
+//				$divNode.css('background-color','red');
+//				
+				$divNode.css('width','200px').css('height','200px').css('background-color','red');
+				
+			})
+		</script>
+	
+	</head>
+	<body>
+		
+		<div>
+			
+		</div>
+		
+		<div>
+			
+		</div>
+		
+		<div>
+			
+		</div>
+	</body>
+</html>

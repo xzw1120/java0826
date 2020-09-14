@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li>北京</li>
+					<li>上海</li>
+						<li>苏州</li>
+							<li>南京</li>
+			</ul>
+		</div>
+			<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+			<script type="text/javascript">
+				//  > 表示选择直接子元素
+				//  空格  表示选择子孙元素
+				
+				var $liNodes = $('div li');
+				
+				$liNodes.css('color','red')
+			</script>
+	</body>
+</html>

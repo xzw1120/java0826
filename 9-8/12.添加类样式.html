@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				background-color: orange;
+			}
+			
+			.b {
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				background-color: blue;
+			}
+		</style>
+			<script type="text/javascript" src="../jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div class="a" >
+			
+		</div>
+		<hr />
+		<div class="b">
+			
+		</div>
+			<hr />
+		<div class="a">
+			
+		</div>
+		
+		<script>
+			
+			/**
+			 *  addClass    添加类样式
+			 *  removeClass  移除类样式
+			 *  hasClass     判断这个类样式是否存在
+			 * 
+			 * 
+			 * 
+			 * 
+			 */
+			// 为div 添加类样式
+			
+ 			var $divNode = $('div');
+//			
+//			$divNode.addClass('div').addClass('a');
+//			
+//			$divNode.removeClass('a')
+      //  alert($divNode.hasClass("a"))
+           if($divNode.hasClass("a")) {
+             	$divNode.removeClass('a')
+             	$divNode.addClass("b");
+           }else {
+           	   $divNode.removeClass('b')
+           	    $divNode.addClass("a");
+           }
+		</script>
+	</body>
+</html>

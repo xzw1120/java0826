@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<select id="pro">
+			<option value="">-------请选择------</option>
+			<option value="js">江苏省</option>
+			<option value="zj">浙江省</option>
+			<option value="ah">安徽省</option>
+		</select>
+		
+		<select id="city">
+			<option value="">-------请选择------</option>
+			
+		</select>
+		
+		<script type="text/javascript">
+			// 1 为省份的下拉选项注册事件 
+			var proNode = document.getElementById("pro");
+
+			
+			var js = ['南京市','苏州市','无锡市','镇江市']
+			var zj = ['杭州市','绍兴市','宁波市','温州市']
+			var ah = ['合肥市','芜湖市','黄山市']
+	
+			
+			// 2 为省份信息注册事件 
+			proNode.onchange = function() {
+				var cityNode = document.getElementById("city");
+				//alert(1)
+				// 2.1 要知道选择的是哪个省 
+				var sf = this.value;
+				// 清空城市列表 
+				// 获取列表的所有集合
+				cityNode.options.length = 1;
+			
+				// 2.2这个省所对应的城市数据  城市的保存应该是在一个数组中
+				if(sf === 'js') {
+					createCity(cityNode,js)
+				}else if(sf === 'zj') {
+					createCity(cityNode,zj)
+				}else if(sf ===  'ah') {
+					createCity(cityNode,ah)
+				}
+			}
+			
+			
+			function createCity(cityNode,pro) {
+				
+				for(var i = 0;i<pro.length;i++) {
+						var cText = pro[i];
+						var optionNode = document.createElement("option");
+						optionNode.innerText = cText;
+						cityNode.appendChild(optionNode)
+					}
+				
+			}
+		</script>
+	</body>
+</html>

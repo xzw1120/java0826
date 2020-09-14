@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	</head>
+
+	<body>
+		<div id="div" class="a">上元教育</div>
+		<div class="a">上元教育</div>
+		<div id="b">上元教育</div>
+		<div class="a">上元教育</div>
+		<div class="a">上元教育</div>
+		<p>上元教育</p>
+		<span>上元教育</span>
+
+		<script type="text/javascript">
+			// id选择器 
+			var $divNode = $("#div");
+			$divNode.css('color', 'red')
+			// 类选择器 
+			var $divNode02 = $(".a");
+			$divNode02.css('color', 'blue')
+			// 标签选择器
+			
+			// 通配符  * 
+			var $divNode03 = $("*");
+			$divNode03.css('color','orange')
+			
+			// 并集选择器
+			var $nodes = $("div.a,p,span");
+			$nodes.css('color','yellow')
+		</script>
+
+	</body>
+
+</html>

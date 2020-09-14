@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+			<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+	</head>
+	<body>
+		<div></div>
+			<div></div>
+			
+			<script type="text/javascript">
+				//  操作文本 可操作属性 类似 
+				/**
+				 *   设置文本的时候 隐式迭代的 
+				 *   读取文本的时候 读取的是一个字符串 而非一个数组 
+				 * 
+				 *  设置获取文本 
+				 *     text()    不解析html 
+				 *     html()    解析html
+				 * 
+				 */
+				
+				
+				var $divNode = $('div');
+				// 类似于 dom中的 innerText
+			//	$divNode.text('<h1>上元教育</h1>')
+			
+			    // 类似于 dom中的innerHTML
+				$divNode.html('<h1>上元教育</h1>')
+//				var t = $divNode.text();
+//				console.info(t)
+				
+				
+			</script>
+	</body>
+</html>

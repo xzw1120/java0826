@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="回退" id="back" />
+		<script type="text/javascript">
+			
+			/**
+			 * history 
+			 *    back   回退一个页面 
+			 *    forward  前进一个页面 
+			 *    go
+			 *      -1      back   回退一个页面 
+			 *       1     forward  前进一个页面 
+			 *      0     location。reload    刷新当前页面
+			 */
+			
+			
+			var backNode = document.getElementById("back");
+			backNode.onclick = function() {
+				// 回退到上一个页面
+				//history.back();
+				history.go(-1);
+			}
+		</script>
+	</body>
+</html>
